@@ -72,7 +72,7 @@ public class FlightService {
     public Flight updateFlight(int flight_id, Flight flight){
         if (flightDAO.getFlightById(flight_id) != null) {
             flightDAO.updateFlight(flight_id, flight);
-            //update flight object fields before you return it, since flightDAO.updateFlight returns void
+            //update flight object field flight_id before you return it, since flightDAO.updateFlight returns void
             //and cannot be returned
             flight.setFlight_id(flight_id);
             return flight;
