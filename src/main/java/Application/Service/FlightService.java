@@ -74,8 +74,8 @@ public class FlightService {
             flightDAO.updateFlight(flight_id, flight);
             //update flight object field flight_id before you return it, since flightDAO.updateFlight returns void
             //and cannot be returned
-            flight.setFlight_id(flight_id);
-            return flight;
+            //flight.setFlight_id(flight_id);
+            return flightDAO.getFlightById(flight_id); //this is better implementation
         } else  {
             return null;
         }
